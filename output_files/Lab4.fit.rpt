@@ -1,5 +1,5 @@
 Fitter report for Lab4
-Thu Sep  7 10:35:04 2023
+Fri Sep  8 10:51:36 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Thu Sep  7 10:35:04 2023          ;
+; Fitter Status                      ; Successful - Fri Sep  8 10:51:36 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; Lab4                                           ;
 ; Top-level Entity Name              ; t_flip_flop                                    ;
@@ -158,15 +158,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Ignored Assignments                                                                    ;
-+----------+----------------+--------------+------------+---------------+----------------+
-; Name     ; Ignored Entity ; Ignored From ; Ignored To ; Ignored Value ; Ignored Source ;
-+----------+----------------+--------------+------------+---------------+----------------+
-; Location ;                ;              ; clk_in     ; PIN_P11       ; QSF Assignment ;
-; Location ;                ;              ; clk_out    ; PIN_A8        ; QSF Assignment ;
-; Location ;                ;              ; reset      ; PIN_C10       ; QSF Assignment ;
-+----------+----------------+--------------+------------+---------------+----------------+
++----------------------------------------------------------------------------------------------------+
+; Ignored Assignments                                                                                ;
++--------------+----------------+--------------+------------+-----------------------+----------------+
+; Name         ; Ignored Entity ; Ignored From ; Ignored To ; Ignored Value         ; Ignored Source ;
++--------------+----------------+--------------+------------+-----------------------+----------------+
+; Location     ;                ;              ; clk_in     ; PIN_P11               ; QSF Assignment ;
+; Location     ;                ;              ; clk_out    ; PIN_A8                ; QSF Assignment ;
+; Location     ;                ;              ; reset      ; PIN_B8                ; QSF Assignment ;
+; I/O Standard ; t_flip_flop    ;              ; reset      ; 3.3 V SCHMITT TRIGGER ; QSF Assignment ;
++--------------+----------------+--------------+------------+-----------------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------+
@@ -1192,8 +1193,8 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file /home/timothy-tan/Code/current-units/digital-system-design/Lab4/output_files/Lab4.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 1091 megabytes
-    Info: Processing ended: Thu Sep  7 10:35:04 2023
+    Info: Peak virtual memory: 1089 megabytes
+    Info: Processing ended: Fri Sep  8 10:51:36 2023
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:05
 

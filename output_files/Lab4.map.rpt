@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab4
-Thu Sep  7 10:40:01 2023
+Fri Sep  8 10:51:32 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -10,7 +10,13 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -37,22 +43,22 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Sep  7 10:40:01 2023              ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep  8 10:51:32 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; Lab4                                           ;
 ; Top-level Entity Name              ; t_flip_flop                                    ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; N/A until Partition Merge                      ;
-;     Total combinational functions  ; N/A until Partition Merge                      ;
-;     Dedicated logic registers      ; N/A until Partition Merge                      ;
-; Total registers                    ; N/A until Partition Merge                      ;
-; Total pins                         ; N/A until Partition Merge                      ;
-; Total virtual pins                 ; N/A until Partition Merge                      ;
-; Total memory bits                  ; N/A until Partition Merge                      ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
-; Total PLLs                         ; N/A until Partition Merge                      ;
-; UFM blocks                         ; N/A until Partition Merge                      ;
-; ADC blocks                         ; N/A until Partition Merge                      ;
+; Total logic elements               ; 0                                              ;
+;     Total combinational functions  ; 0                                              ;
+;     Dedicated logic registers      ; 0                                              ;
+; Total registers                    ; 0                                              ;
+; Total pins                         ; 5                                              ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -158,48 +164,142 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
+; t_flip_flop.vhd                  ; yes             ; User VHDL File  ; /home/timothy-tan/Code/current-units/digital-system-design/Lab4/t_flip_flop.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 5     ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 5     ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; |t_flip_flop               ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 5    ; 0            ; 0          ; |t_flip_flop        ; t_flip_flop ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 5                           ;
+; cycloneiii_lcell_comb ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Thu Sep  7 10:39:56 2023
+    Info: Processing started: Fri Sep  8 10:51:26 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab4 -c Lab4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file register.vhd
+    Info (12022): Found design unit 1: MY_REGISTER-behavior File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/register.vhd Line: 17
+    Info (12023): Found entity 1: MY_REGISTER File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/register.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file Lab4.vhd
     Info (12022): Found design unit 1: Clk_divider_to_1Hz-Behav File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/Lab4.vhd Line: 13
     Info (12023): Found entity 1: Clk_divider_to_1Hz File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/Lab4.vhd Line: 3
-Info (12021): Found 2 design units, including 1 entities, in source file output_files/register.vhd
-    Info (12022): Found design unit 1: MY_REGISTER-behavior File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/output_files/register.vhd Line: 17
-    Info (12023): Found entity 1: MY_REGISTER File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/output_files/register.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file t_flip_flop.vhd
     Info (12022): Found design unit 1: t_flip_flop-behav File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/t_flip_flop.vhd Line: 9
     Info (12023): Found entity 1: t_flip_flop File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/t_flip_flop.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file counter_8_bit.vhd
     Info (12022): Found design unit 1: counter_8_bit-behav File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/counter_8_bit.vhd Line: 9
     Info (12023): Found entity 1: counter_8_bit File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/counter_8_bit.vhd Line: 4
-Error (10500): VHDL syntax error at test_bench.vhd(13) near text "END";  expecting an identifier ("end" is a reserved keyword), or "constant", or "file", or "signal", or "variable" File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/test_bench.vhd Line: 13
-Error (10500): VHDL syntax error at test_bench.vhd(22) near text "BEGIN";  expecting an identifier ("begin" is a reserved keyword), or "constant", or "file", or "signal", or "variable" File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/test_bench.vhd Line: 22
-Error (10500): VHDL syntax error at test_bench.vhd(41) near text "WAIT";  expecting "end", or "(", or an identifier ("wait" is a reserved keyword), or a concurrent statement File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/test_bench.vhd Line: 41
-Error (10500): VHDL syntax error at test_bench.vhd(48) near text "WAIT";  expecting "end", or "(", or an identifier ("wait" is a reserved keyword), or a concurrent statement File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/test_bench.vhd Line: 48
-Error (10500): VHDL syntax error at test_bench.vhd(52) near text "WAIT";  expecting "end", or "(", or an identifier ("wait" is a reserved keyword), or a concurrent statement File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/test_bench.vhd Line: 52
-Error (10500): VHDL syntax error at test_bench.vhd(56) near text "WAIT";  expecting "end", or "(", or an identifier ("wait" is a reserved keyword), or a concurrent statement File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/test_bench.vhd Line: 56
-Error (10500): VHDL syntax error at test_bench.vhd(60) near text "WAIT";  expecting "end", or "(", or an identifier ("wait" is a reserved keyword), or a concurrent statement File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/test_bench.vhd Line: 60
-Error (10500): VHDL syntax error at test_bench.vhd(64) near text "WAIT";  expecting "end", or "(", or an identifier ("wait" is a reserved keyword), or a concurrent statement File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/test_bench.vhd Line: 64
-Error (10500): VHDL syntax error at test_bench.vhd(68) near text "WAIT";  expecting "end", or "(", or an identifier ("wait" is a reserved keyword), or a concurrent statement File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/test_bench.vhd Line: 68
-Error (10500): VHDL syntax error at test_bench.vhd(72) near text "WAIT";  expecting "end", or "(", or an identifier ("wait" is a reserved keyword), or a concurrent statement File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/test_bench.vhd Line: 72
-Error (10500): VHDL syntax error at test_bench.vhd(76) near text "WAIT";  expecting "end", or "(", or an identifier ("wait" is a reserved keyword), or a concurrent statement File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/test_bench.vhd Line: 76
-Error (10500): VHDL syntax error at test_bench.vhd(80) near text "WAIT";  expecting "end", or "(", or an identifier ("wait" is a reserved keyword), or a concurrent statement File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/test_bench.vhd Line: 80
-Error (10500): VHDL syntax error at test_bench.vhd(84) near text "WAIT";  expecting "end", or "(", or an identifier ("wait" is a reserved keyword), or a concurrent statement File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/test_bench.vhd Line: 84
-Error (10500): VHDL syntax error at test_bench.vhd(88) near text "WAIT";  expecting "end", or "(", or an identifier ("wait" is a reserved keyword), or a concurrent statement File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/test_bench.vhd Line: 88
-Error (10500): VHDL syntax error at test_bench.vhd(92) near text "WAIT";  expecting "end", or "(", or an identifier ("wait" is a reserved keyword), or a concurrent statement File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/test_bench.vhd Line: 92
-Info (12021): Found 0 design units, including 0 entities, in source file test_bench.vhd
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 15 errors, 1 warning
-    Error: Peak virtual memory: 418 megabytes
-    Error: Processing ended: Thu Sep  7 10:40:01 2023
-    Error: Elapsed time: 00:00:05
-    Error: Total CPU time (on all processors): 00:00:13
+Info (12021): Found 2 design units, including 1 entities, in source file augmented.vhd
+    Info (12022): Found design unit 1: counter_8_bit_augmented-behav File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/augmented.vhd Line: 9
+    Info (12023): Found entity 1: counter_8_bit_augmented File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/augmented.vhd Line: 4
+Info (12127): Elaborating entity "t_flip_flop" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at t_flip_flop.vhd(10): used implicit default value for signal "q_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/t_flip_flop.vhd Line: 10
+Warning (10631): VHDL Process Statement warning at t_flip_flop.vhd(12): inferring latch(es) for signal or variable "Q", which holds its previous value in one or more paths through the process File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/t_flip_flop.vhd Line: 12
+Warning (10631): VHDL Process Statement warning at t_flip_flop.vhd(12): inferring latch(es) for signal or variable "Q_inv", which holds its previous value in one or more paths through the process File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/t_flip_flop.vhd Line: 12
+Info (10041): Inferred latch for "Q_inv" at t_flip_flop.vhd(12) File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/t_flip_flop.vhd Line: 12
+Info (10041): Inferred latch for "Q" at t_flip_flop.vhd(12) File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/t_flip_flop.vhd Line: 12
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Q" is stuck at GND File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/t_flip_flop.vhd Line: 6
+    Warning (13410): Pin "Q_inv" is stuck at VCC File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/t_flip_flop.vhd Line: 6
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/t_flip_flop.vhd Line: 5
+    Warning (15610): No output dependent on input pin "T" File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/t_flip_flop.vhd Line: 5
+    Warning (15610): No output dependent on input pin "CLR" File: /home/timothy-tan/Code/current-units/digital-system-design/Lab4/t_flip_flop.vhd Line: 5
+Info (21057): Implemented 5 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 2 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 427 megabytes
+    Info: Processing ended: Fri Sep  8 10:51:32 2023
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:13
 
 

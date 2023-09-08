@@ -1,28 +1,36 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
-ENTITY Wk4_D_Pos_Latch_tb IS
-END Wk4_D_Pos_Latch_tb;
+ENTITY register_tb IS
+	     GENERIC (SIZE : INTEGER := 4);
+END register_tb;
 
-ARCHITECTURE v1 OF Wk4_D_Pos_Latch_tb IS
+ARCHITECTURE v1 OF register_tb IS
     --Declare components
-    COMPONENT Wk4_D_Pos_Latch is
-        PORT (
-        D : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
-        CLK : IN STD_LOGIC;
-        Q : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+
+    COMPONENT MY_REGISTER is
+    PORT (
+        data : IN STD_LOGIC_VECTOR(SIZE - 1 DOWNTO 0);
+        pload : IN STD_LOGIC;
+        s_right : IN STD_LOGIC;
+        s_in : IN STD_LOGIC;
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        Q : OUT STD_LOGIC_VECTOR(SIZE - 1 DOWNTO 0)
+    );
     END COMPONENT;
 
     --Declare signals
 
-    SIGNAL D : STD_LOGIC;
-    SIGNAL CLK : STD_LOGIC;
-    SIGNAL Q : STD_LOGIC;
+    SIGNAL D : STD_LOGIC_VECTOR (3 DOWNTO 0);
+	 SIGNAL pload, s_right, s_in : STD_LOGIC;
+    SIGNAL CLK, RESET : STD_LOGIC;
+    SIGNAL Q_OUT : STD_LOGIC_VECTOR (3 DOWNTO 0);
     CONSTANT T : TIME := 100 ns;
 
 BEGIN
     --Instantiating devive under test (component of type Wk4_D_Pos_Latch) and connecting testbench signals with Wk4_D_Pos_Latch.vhd 
 
-    DUT : Wk4_D_Pos_Latch PORT MAP(D => D, CLK => CLK, Q => Q);
+    DUT : MY_REGISTER PORT MAP(RESET => reset, data => D, pload => pload, s_right => s_right, s_in => s_in, CLK => CLK, Q => Q_OUT);
 
     main_process :
 
@@ -62,7 +70,7 @@ BEGIN
         PLOAD <= '1';
         WAIT FOR T;
 
-		  RESET <= '1' --600ns
+		  RESET <= '1'; --600ns
         WAIT FOR T;
 
         D <= "0000";
@@ -78,7 +86,7 @@ BEGIN
 
         WAIT FOR T;
 
-        S_IN <= '0'
+        S_IN <= '0';
         WAIT FOR T;
 
         S_IN <= '1';

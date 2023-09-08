@@ -21,7 +21,7 @@ ARCHITECTURE v1 OF counter_8_bit_augmented IS
 BEGIN
     --Instantiating devive under test (component of type Wk4_D_Pos_Latch) and connecting testbench signals with Wk4_D_Pos_Latch.vhd 
 
-    DUT : counter_8_bit_augmented PORT MAP(D => D, CLK => CLK, Q => Q);
+    DUT : counter_8_bit_augmented PORT MAP(D => D, CLK => CLK1, Q => Q);
 
     main_process :
 
@@ -68,7 +68,7 @@ BEGIN
         PLOAD <= '1';
         WAIT FOR T;
 
-		  RESET <= '1' --600ns
+		  RESET <= '1'; --600ns
         WAIT FOR T;
 
         D <= "0000";
@@ -84,7 +84,7 @@ BEGIN
 
         WAIT FOR T;
 
-        S_IN <= '0'
+        S_IN <= '0';
         WAIT FOR T;
 
         S_IN <= '1';

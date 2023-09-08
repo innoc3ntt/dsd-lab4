@@ -6,7 +6,7 @@ entity counter_8_bit_augmented is
 				q : out std_logic);
 end counter_8_bit_augmented;
 
-architecture behav of counter_8_bit is
+architecture behav of counter_8_bit_augmented is
 signal q0,q1,q2,q3,q4,q5,q6 : std_logic;
 signal t0,t1,t2,t3,t4,t5,t6 : std_logic;
 signal clk_out : std_logic;

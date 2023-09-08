@@ -11,6 +11,8 @@ ENTITY Clk_divider_to_1Hz IS
 END Clk_divider_to_1Hz;
 
 ARCHITECTURE Behav OF Clk_divider_to_1Hz IS
+	attribute chip_pin : string;
+	attribute chip_pin of reset : signal is "B8";
    SIGNAL temp : STD_LOGIC;
    SIGNAL counter : INTEGER;
    CONSTANT N : INTEGER := 2;

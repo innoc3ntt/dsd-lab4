@@ -1,5 +1,5 @@
 Flow report for Lab4
-Thu Sep  7 10:40:01 2023
+Fri Sep  8 10:51:41 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -41,24 +41,24 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Flow Failed - Thu Sep  7 10:40:01 2023         ;
+; Flow Status                        ; Successful - Fri Sep  8 10:51:39 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; Lab4                                           ;
 ; Top-level Entity Name              ; t_flip_flop                                    ;
 ; Family                             ; MAX 10                                         ;
 ; Device                             ; 10M50DAF484C7G                                 ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; N/A until Partition Merge                      ;
-;     Total combinational functions  ; N/A until Partition Merge                      ;
-;     Dedicated logic registers      ; N/A until Partition Merge                      ;
-; Total registers                    ; N/A until Partition Merge                      ;
-; Total pins                         ; N/A until Partition Merge                      ;
-; Total virtual pins                 ; N/A until Partition Merge                      ;
-; Total memory bits                  ; N/A until Partition Merge                      ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
-; Total PLLs                         ; N/A until Partition Merge                      ;
-; UFM blocks                         ; N/A until Partition Merge                      ;
-; ADC blocks                         ; N/A until Partition Merge                      ;
+; Total logic elements               ; 1 / 49,760 ( < 1 % )                           ;
+;     Total combinational functions  ; 1 / 49,760 ( < 1 % )                           ;
+;     Dedicated logic registers      ; 0 / 49,760 ( 0 % )                             ;
+; Total registers                    ; 0                                              ;
+; Total pins                         ; 5 / 360 ( 1 % )                                ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                          ;
+; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                                ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                                  ;
+; ADC blocks                         ; 0 / 2 ( 0 % )                                  ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/07/2023 10:39:56 ;
+; Start date & time ; 09/08/2023 10:51:26 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Lab4                ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 61659235514533.169405439638407         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 61659235514533.169414148652506         ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; t_flip_flop ; Top        ;
@@ -96,8 +96,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 418 MB              ; 00:00:13                           ;
-; Total                ; 00:00:05     ; --                      ; --                  ; 00:00:13                           ;
+; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 427 MB              ; 00:00:13                           ;
+; Fitter               ; 00:00:04     ; 1.0                     ; 1089 MB             ; 00:00:05                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 383 MB              ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 535 MB              ; 00:00:01                           ;
+; Total                ; 00:00:12     ; --                      ; --                  ; 00:00:20                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -107,6 +110,9 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname        ; OS Name      ; OS Version ; Processor type ;
 +----------------------+-------------------------+--------------+------------+----------------+
 ; Analysis & Synthesis ; timothy-tan-XPS-13-9305 ; Ubuntu 23.04 ; 23         ; x86_64         ;
+; Fitter               ; timothy-tan-XPS-13-9305 ; Ubuntu 23.04 ; 23         ; x86_64         ;
+; Assembler            ; timothy-tan-XPS-13-9305 ; Ubuntu 23.04 ; 23         ; x86_64         ;
+; Timing Analyzer      ; timothy-tan-XPS-13-9305 ; Ubuntu 23.04 ; 23         ; x86_64         ;
 +----------------------+-------------------------+--------------+------------+----------------+
 
 
@@ -114,6 +120,9 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Lab4 -c Lab4
+quartus_fit --read_settings_files=off --write_settings_files=off Lab4 -c Lab4
+quartus_asm --read_settings_files=off --write_settings_files=off Lab4 -c Lab4
+quartus_sta Lab4 -c Lab4
 
 
 
