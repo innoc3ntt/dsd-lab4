@@ -1,0 +1,8 @@
+|t_flip_flop
+clk => ~NO_FANOUT~
+T => ~NO_FANOUT~
+CLR => ~NO_FANOUT~
+Q << <GND>
+Q_inv << <VCC>
+
+
