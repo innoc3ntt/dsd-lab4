@@ -8,17 +8,20 @@ end t_flip_flop;
 
 architecture behav  of t_flip_flop is
 	Signal q_out : std_logic;
+	signal next_q : std_logic;
 	begin
+	
 		process (CLR, clk, T)
 			begin
 				if CLR = '0' then 
-					Q <= '0';
-					Q_inv <= '1';
+					q_out <= '0';
 				
 				elsif rising_edge(clk) and T ='1' then
-					Q <= not q_out;
-					Q_inv <= q_out;
+					q_out <= next_q;
+
 				end if;
 		end process;
+		next_q <= q_out when T='0' else not q_out;
+		Q <= q_out;
 end behav;
 				
