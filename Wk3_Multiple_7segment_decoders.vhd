@@ -1,27 +1,27 @@
-library IEEE;
-use IEEE.std_logic_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
 
-entity Wk3_Multiple_7segment_decoders is
-port (SW: in std_logic_vector (3 downto 0);
-		LEDR: out std_logic_vector (3 downto 0);
-		HEX0: out std_logic_vector (6 downto 0);
-		HEX1: out std_logic_vector (6 downto 0);
-		HEX2: out std_logic_vector (6 downto 0);
-		test: out std_logic_vector (8 downto 0 ));
-end Wk3_Multiple_7segment_decoders;
+ENTITY Wk3_Multiple_7segment_decoders IS
+	PORT (
+		SW : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
+		LEDR : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+		HEX0 : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+		HEX1 : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+		HEX2 : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+		test : OUT STD_LOGIC_VECTOR (8 DOWNTO 0));
+END Wk3_Multiple_7segment_decoders;
 
+ARCHITECTURE impl OF Wk3_Multiple_7segment_decoders IS
 
+	COMPONENT Wk3_7segment_decoder
+		PORT (
+			SW : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
+			LEDR : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+			HEX0 : OUT STD_LOGIC_VECTOR (6 DOWNTO 0));
+	END COMPONENT;
 
-architecture impl of Wk3_Multiple_7segment_decoders is
-
-	component Wk3_7segment_decoder
-		port (SW: in std_logic_vector (3 downto 0);
-				LEDR: out std_logic_vector (3 downto 0);
-				HEX0: out std_logic_vector (6 downto 0));
-	end component;
-
-	begin
-		hex_0:Wk3_7segment_decoder port map(sw => sw, hex0 => hex0, LEDR => LEDR); 
-		hex_1:Wk3_7segment_decoder port map(sw => sw, hex0 => test(6 downto 0)); 
-		hex_2:Wk3_7segment_decoder port map(sw => sw, hex0 => hex2); 
-end impl;
+BEGIN
+	hex_0 : Wk3_7segment_decoder PORT MAP(sw => sw, hex0 => hex0, LEDR => LEDR);
+	hex_1 : Wk3_7segment_decoder PORT MAP(sw => sw, hex0 => test(6 DOWNTO 0));
+	hex_2 : Wk3_7segment_decoder PORT MAP(sw => sw, hex0 => hex2);
+END impl;

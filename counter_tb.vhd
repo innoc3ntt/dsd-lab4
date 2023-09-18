@@ -5,12 +5,11 @@ END counter_tb;
 
 ARCHITECTURE v1 OF counter_8_bit_augmented IS
     --Declare components
-    COMPONENT counter_tb is
-		port ( en, clk, clr : in std_logic;
-				q : out std_logic);
-	end component;
-
-
+    COMPONENT counter_tb IS
+        PORT (
+            en, clk, clr : IN STD_LOGIC;
+            q : OUT STD_LOGIC);
+    END COMPONENT;
     --Declare signals
 
     SIGNAL D : STD_LOGIC;
@@ -28,13 +27,13 @@ BEGIN
     PROCESS
         -- Declarations here
     BEGIN
-			
-			T_clock <= '0';
-			WAIT FOR T;
-			
-			T_clocl <= '1';
-			WAIT FOR T;
-			
+
+        T_clock <= '0';
+        WAIT FOR T;
+
+        T_clocl <= '1';
+        WAIT FOR T;
+
         -- Apply inputs once at a time	
         --Initialise
         D <= "0000";
@@ -60,7 +59,7 @@ BEGIN
         PLOAD <= '1';
         WAIT FOR T;
 
-        D <= "0110"; 
+        D <= "0110";
         PLOAD <= '0';
         WAIT FOR T;
 
@@ -68,7 +67,7 @@ BEGIN
         PLOAD <= '1';
         WAIT FOR T;
 
-		  RESET <= '1'; --600ns
+        RESET <= '1'; --600ns
         WAIT FOR T;
 
         D <= "0000";
@@ -76,7 +75,7 @@ BEGIN
         WAIT FOR T;
 
         S_IN <= '1';
-        
+
         WAIT FOR T;
 
         S_RIGHT <= '1';
@@ -89,19 +88,19 @@ BEGIN
 
         S_IN <= '1';
         WAIT FOR T;
-		  
-		  D <= "1001";
-		  PLOAD <= '1';
-		  WAIT FOR T;
-		  
-		  RESET <= '0';
-		  WAIT FOR T;
-		  
-		  RESET <= '1';
-		  PLOAD <= '0';
-		  S_RIGHT <= '0';
-		  S_IN <= '0';
-		  WAIT FOR T;
+
+        D <= "1001";
+        PLOAD <= '1';
+        WAIT FOR T;
+
+        RESET <= '0';
+        WAIT FOR T;
+
+        RESET <= '1';
+        PLOAD <= '0';
+        S_RIGHT <= '0';
+        S_IN <= '0';
+        WAIT FOR T;
 
         --End of test is to wait forever
         WAIT;

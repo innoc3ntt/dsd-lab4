@@ -15,9 +15,9 @@ ENTITY MY_REGISTER IS
 END MY_REGISTER;
 
 ARCHITECTURE behavior OF MY_REGISTER IS
-	Signal data_reg : STD_LOGIC_VECTOR(size-1 downto 0);
-	
-	begin
+    SIGNAL data_reg : STD_LOGIC_VECTOR(size - 1 DOWNTO 0);
+
+BEGIN
     PROCESS (pload, s_right, s_in, clk, reset, data, data_reg)
     BEGIN
         IF (reset = '0') THEN
@@ -27,14 +27,10 @@ ARCHITECTURE behavior OF MY_REGISTER IS
                 Q <= data;
             ELSIF (s_right = '1') THEN
                 data_reg(3) <= s_in;
-					 data_reg(2 downto 0) <= data_reg(SIZE - 1 DOWNTO 1);
-					 Q <= data_reg;
+                data_reg(2 DOWNTO 0) <= data_reg(SIZE - 1 DOWNTO 1);
+                Q <= data_reg;
             END IF;
         END IF;
-
-	
     END PROCESS;
-	 
-	 
-	 		  	
+
 END behavior;

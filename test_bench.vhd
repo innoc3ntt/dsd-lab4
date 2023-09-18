@@ -1,28 +1,28 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 ENTITY register_tb IS
-	     GENERIC (SIZE : INTEGER := 4);
+    GENERIC (SIZE : INTEGER := 4);
 END register_tb;
 
 ARCHITECTURE v1 OF register_tb IS
     --Declare components
 
-    COMPONENT MY_REGISTER is
-    PORT (
-        data : IN STD_LOGIC_VECTOR(SIZE - 1 DOWNTO 0);
-        pload : IN STD_LOGIC;
-        s_right : IN STD_LOGIC;
-        s_in : IN STD_LOGIC;
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        Q : OUT STD_LOGIC_VECTOR(SIZE - 1 DOWNTO 0)
-    );
+    COMPONENT MY_REGISTER IS
+        PORT (
+            data : IN STD_LOGIC_VECTOR(SIZE - 1 DOWNTO 0);
+            pload : IN STD_LOGIC;
+            s_right : IN STD_LOGIC;
+            s_in : IN STD_LOGIC;
+            clk : IN STD_LOGIC;
+            reset : IN STD_LOGIC;
+            Q : OUT STD_LOGIC_VECTOR(SIZE - 1 DOWNTO 0)
+        );
     END COMPONENT;
 
     --Declare signals
 
     SIGNAL D : STD_LOGIC_VECTOR (3 DOWNTO 0);
-	 SIGNAL pload, s_right, s_in : STD_LOGIC;
+    SIGNAL pload, s_right, s_in : STD_LOGIC;
     SIGNAL CLK, RESET : STD_LOGIC;
     SIGNAL Q_OUT : STD_LOGIC_VECTOR (3 DOWNTO 0);
     CONSTANT T : TIME := 100 ns;
@@ -62,7 +62,7 @@ BEGIN
         PLOAD <= '1';
         WAIT FOR T;
 
-        D <= "0110"; 
+        D <= "0110";
         PLOAD <= '0';
         WAIT FOR T;
 
@@ -70,7 +70,7 @@ BEGIN
         PLOAD <= '1';
         WAIT FOR T;
 
-		  RESET <= '1'; --600ns
+        RESET <= '1'; --600ns
         WAIT FOR T;
 
         D <= "0000";
@@ -78,7 +78,7 @@ BEGIN
         WAIT FOR T;
 
         S_IN <= '1';
-        
+
         WAIT FOR T;
 
         S_RIGHT <= '1';
@@ -91,19 +91,19 @@ BEGIN
 
         S_IN <= '1';
         WAIT FOR T;
-		  
-		  D <= "1001";
-		  PLOAD <= '1';
-		  WAIT FOR T;
-		  
-		  RESET <= '0';
-		  WAIT FOR T;
-		  
-		  RESET <= '1';
-		  PLOAD <= '0';
-		  S_RIGHT <= '0';
-		  S_IN <= '0';
-		  WAIT FOR T;
+
+        D <= "1001";
+        PLOAD <= '1';
+        WAIT FOR T;
+
+        RESET <= '0';
+        WAIT FOR T;
+
+        RESET <= '1';
+        PLOAD <= '0';
+        S_RIGHT <= '0';
+        S_IN <= '0';
+        WAIT FOR T;
 
         --End of test is to wait forever
         WAIT;

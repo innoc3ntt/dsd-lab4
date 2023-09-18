@@ -1,27 +1,28 @@
-library ieee;
-use ieee.std_logic_1164.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
 
-entity t_flip_flop is
-	port ( clk, T, CLR : in std_logic;
-				Q, Q_inv : out std_logic);
-end t_flip_flop;
+ENTITY t_flip_flop IS
+	PORT (
+		clk, T, CLR : IN STD_LOGIC;
+		Q, Q_inv : OUT STD_LOGIC);
+END t_flip_flop;
 
-architecture behav  of t_flip_flop is
-	Signal q_out : std_logic;
-	signal next_q : std_logic;
-	begin
-	
-		process (CLR, clk, T)
-			begin
-				if CLR = '0' then 
-					q_out <= '0';
-				
-				elsif rising_edge(clk) and T ='1' then
-					q_out <= next_q;
+ARCHITECTURE behav OF t_flip_flop IS
+	SIGNAL q_out : STD_LOGIC;
+	SIGNAL next_q : STD_LOGIC;
+BEGIN
 
-				end if;
-		end process;
-		next_q <= q_out when T='0' else not q_out;
-		Q <= q_out;
-end behav;
-				
+	PROCESS (CLR, clk, T)
+	BEGIN
+		IF CLR = '0' THEN
+			q_out <= '0';
+
+		ELSIF rising_edge(clk) AND T = '1' THEN
+			q_out <= next_q;
+
+		END IF;
+	END PROCESS;
+	next_q <= q_out WHEN T = '0' ELSE
+		NOT q_out;
+	Q <= q_out;
+END behav;
