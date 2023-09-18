@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Mon Sep 11 10:58:21 2023
-Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Standard Edition
+Analysis & Synthesis Status : Successful - Mon Sep 18 13:57:11 2023
+Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : Lab4
-Top-level Entity Name : Lab4
+Top-level Entity Name : counter_8_bit
 Family : MAX 10
-Total logic elements : 57
-    Total combinational functions : 57
-    Dedicated logic registers : 33
-Total registers : 33
-Total pins : 3
+Total logic elements : 5
+    Total combinational functions : 5
+    Dedicated logic registers : 2
+Total registers : 2
+Total pins : 25
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

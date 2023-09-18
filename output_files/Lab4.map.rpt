@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Lab4
-Mon Sep 11 10:58:21 2023
-Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Standard Edition
+Mon Sep 18 13:57:11 2023
+Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
 ---------------------
@@ -14,18 +14,21 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Standard Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Source assignments for Top-level Entity: |Lab4
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |Lab4
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  9. Source assignments for Top-level Entity: |counter_8_bit
+ 10. Port Connectivity Checks: "Wk3_7segment_decoder:seg2"
+ 11. Port Connectivity Checks: "Wk3_7segment_decoder:seg1"
+ 12. Port Connectivity Checks: "t_flip_flop:ff1"
+ 13. Port Connectivity Checks: "t_flip_flop:ff0"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2019  Intel Corporation. All rights reserved.
+Copyright (C) 2023  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -42,26 +45,26 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Sep 11 10:58:21 2023           ;
-; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Standard Edition ;
-; Revision Name                      ; Lab4                                            ;
-; Top-level Entity Name              ; Lab4                                            ;
-; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 57                                              ;
-;     Total combinational functions  ; 57                                              ;
-;     Dedicated logic registers      ; 33                                              ;
-; Total registers                    ; 33                                              ;
-; Total pins                         ; 3                                               ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
-; UFM blocks                         ; 0                                               ;
-; ADC blocks                         ; 0                                               ;
-+------------------------------------+-------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Sep 18 13:57:11 2023          ;
+; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
+; Revision Name                      ; Lab4                                           ;
+; Top-level Entity Name              ; counter_8_bit                                  ;
+; Family                             ; MAX 10                                         ;
+; Total logic elements               ; 5                                              ;
+;     Total combinational functions  ; 5                                              ;
+;     Dedicated logic registers      ; 2                                              ;
+; Total registers                    ; 2                                              ;
+; Total pins                         ; 25                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
@@ -70,7 +73,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; 10M50DAF484C7G     ;                    ;
-; Top-level entity name                                            ; Lab4               ; Lab4               ;
+; Top-level entity name                                            ; counter_8_bit      ; Lab4               ;
 ; Family name                                                      ; MAX 10             ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -156,65 +159,71 @@ https://fpgasoftware.intel.com/eula.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 8           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                    ;
-+----------------------------------+-----------------+-----------------+------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path             ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------+---------+
-; Lab4.vhd                         ; yes             ; User VHDL File  ; C:/Users/20920822/temp/dsd-lab4/Lab4.vhd ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                  ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------+---------+
+; t_flip_flop.vhd                  ; yes             ; User VHDL File  ; /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/t_flip_flop.vhd          ;         ;
+; counter_8_bit.vhd                ; yes             ; User VHDL File  ; /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd        ;         ;
+; Wk3_7segment_decoder.vhd         ; yes             ; User VHDL File  ; /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/Wk3_7segment_decoder.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 57           ;
-;                                             ;              ;
-; Total combinational functions               ; 57           ;
-; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 10           ;
-;     -- 3 input functions                    ; 0            ;
-;     -- <=2 input functions                  ; 47           ;
-;                                             ;              ;
-; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 26           ;
-;     -- arithmetic mode                      ; 31           ;
-;                                             ;              ;
-; Total registers                             ; 33           ;
-;     -- Dedicated logic registers            ; 33           ;
-;     -- I/O registers                        ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 3            ;
-;                                             ;              ;
-; Embedded Multiplier 9-bit elements          ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; clk_in~input ;
-; Maximum fan-out                             ; 33           ;
-; Total fan-out                               ; 236          ;
-; Average fan-out                             ; 2.46         ;
-+---------------------------------------------+--------------+
++---------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                         ;
++---------------------------------------------+-----------------------+
+; Resource                                    ; Usage                 ;
++---------------------------------------------+-----------------------+
+; Estimated Total logic elements              ; 5                     ;
+;                                             ;                       ;
+; Total combinational functions               ; 5                     ;
+; Logic element usage by number of LUT inputs ;                       ;
+;     -- 4 input functions                    ; 0                     ;
+;     -- 3 input functions                    ; 1                     ;
+;     -- <=2 input functions                  ; 4                     ;
+;                                             ;                       ;
+; Logic elements by mode                      ;                       ;
+;     -- normal mode                          ; 5                     ;
+;     -- arithmetic mode                      ; 0                     ;
+;                                             ;                       ;
+; Total registers                             ; 2                     ;
+;     -- Dedicated logic registers            ; 2                     ;
+;     -- I/O registers                        ; 0                     ;
+;                                             ;                       ;
+; I/O pins                                    ; 25                    ;
+;                                             ;                       ;
+; Embedded Multiplier 9-bit elements          ; 0                     ;
+;                                             ;                       ;
+; Maximum fan-out node                        ; t_flip_flop:ff0|q_out ;
+; Maximum fan-out                             ; 7                     ;
+; Total fan-out                               ; 50                    ;
+; Average fan-out                             ; 0.88                  ;
++---------------------------------------------+-----------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |Lab4                      ; 57 (57)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 3    ; 0            ; 0          ; |Lab4               ; Lab4        ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                  ;
++--------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                      ; Entity Name          ; Library Name ;
++--------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------+----------------------+--------------+
+; |counter_8_bit                 ; 5 (0)               ; 2 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 25   ; 0            ; 0          ; |counter_8_bit                           ; counter_8_bit        ; work         ;
+;    |Wk3_7segment_decoder:seg1| ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |counter_8_bit|Wk3_7segment_decoder:seg1 ; Wk3_7segment_decoder ; work         ;
+;    |t_flip_flop:ff0|           ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |counter_8_bit|t_flip_flop:ff0           ; t_flip_flop          ; work         ;
+;    |t_flip_flop:ff1|           ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |counter_8_bit|t_flip_flop:ff1           ; t_flip_flop          ; work         ;
++--------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -223,34 +232,63 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 33    ;
+; Total registers                              ; 2     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 33    ;
+; Number of registers using Asynchronous Clear ; 2     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------+
-; Source assignments for Top-level Entity: |Lab4 ;
-+------------+---------+------+------------------+
-; Assignment ; Value   ; From ; To               ;
-+------------+---------+------+------------------+
-; LOCATION   ; Pin_P11 ; -    ; clk_in           ;
-; LOCATION   ; Pin_A8  ; -    ; clk_out          ;
-+------------+---------+------+------------------+
++---------------------------------------------------------+
+; Source assignments for Top-level Entity: |counter_8_bit ;
++------------+---------+------+---------------------------+
+; Assignment ; Value   ; From ; To                        ;
++------------+---------+------+---------------------------+
+; LOCATION   ; Pin_C11 ; -    ; en                        ;
+; LOCATION   ; Pin_B8  ; -    ; clk                       ;
+; LOCATION   ; Pin_C10 ; -    ; clr                       ;
++------------+---------+------+---------------------------+
 
 
-+----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |Lab4 ;
-+----------------+----------+------------------------------------------+
-; Parameter Name ; Value    ; Type                                     ;
-+----------------+----------+------------------------------------------+
-; Freq_in        ; 50000000 ; Signed Integer                           ;
-+----------------+----------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Wk3_7segment_decoder:seg2"                                                          ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; sw   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; ledr ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Wk3_7segment_decoder:seg1"                                                              ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; sw[3..2] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; ledr     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "t_flip_flop:ff1"                                                                     ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; q_inv ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "t_flip_flop:ff0"                                                                     ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; q_inv ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -258,19 +296,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 3                           ;
-; cycloneiii_ff         ; 33                          ;
-;     CLR               ; 33                          ;
-; cycloneiii_lcell_comb ; 57                          ;
-;     arith             ; 31                          ;
-;         2 data inputs ; 31                          ;
-;     normal            ; 26                          ;
+; boundary_port         ; 25                          ;
+; cycloneiii_ff         ; 2                           ;
+;     CLR               ; 2                           ;
+; cycloneiii_lcell_comb ; 8                           ;
+;     normal            ; 8                           ;
+;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 15                          ;
-;         4 data inputs ; 10                          ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.40                        ;
-; Average LUT depth     ; 3.70                        ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.69                        ;
 +-----------------------+-----------------------------+
 
 
@@ -288,50 +325,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 19.1.0 Build 670 09/22/2019 SJ Standard Edition
-    Info: Processing started: Mon Sep 11 10:58:13 2023
+    Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+    Info: Processing started: Mon Sep 18 13:57:06 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab4 -c Lab4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file test_bench.vhd
-    Info (12022): Found design unit 1: register_tb-v1 File: C:/Users/20920822/temp/dsd-lab4/test_bench.vhd Line: 7
-    Info (12023): Found entity 1: register_tb File: C:/Users/20920822/temp/dsd-lab4/test_bench.vhd Line: 3
+    Info (12022): Found design unit 1: register_tb-v1 File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/test_bench.vhd Line: 7
+    Info (12023): Found entity 1: register_tb File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/test_bench.vhd Line: 3
 Info (12021): Found 2 design units, including 1 entities, in source file my_register.vhd
-    Info (12022): Found design unit 1: MY_REGISTER-behavior File: C:/Users/20920822/temp/dsd-lab4/my_register.vhd Line: 17
-    Info (12023): Found entity 1: MY_REGISTER File: C:/Users/20920822/temp/dsd-lab4/my_register.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file lab4.vhd
-    Info (12022): Found design unit 1: Lab4-Behav File: C:/Users/20920822/temp/dsd-lab4/Lab4.vhd Line: 17
-    Info (12023): Found entity 1: Lab4 File: C:/Users/20920822/temp/dsd-lab4/Lab4.vhd Line: 5
+    Info (12022): Found design unit 1: MY_REGISTER-behavior File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/my_register.vhd Line: 17
+    Info (12023): Found entity 1: MY_REGISTER File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/my_register.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file Lab4.vhd
+    Info (12022): Found design unit 1: Lab4-Behav File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/Lab4.vhd Line: 13
+    Info (12023): Found entity 1: Lab4 File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/Lab4.vhd Line: 3
 Info (12021): Found 2 design units, including 1 entities, in source file t_flip_flop.vhd
-    Info (12022): Found design unit 1: t_flip_flop-behav File: C:/Users/20920822/temp/dsd-lab4/t_flip_flop.vhd Line: 9
-    Info (12023): Found entity 1: t_flip_flop File: C:/Users/20920822/temp/dsd-lab4/t_flip_flop.vhd Line: 4
+    Info (12022): Found design unit 1: t_flip_flop-behav File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/t_flip_flop.vhd Line: 10
+    Info (12023): Found entity 1: t_flip_flop File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/t_flip_flop.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file counter_8_bit.vhd
-    Info (12022): Found design unit 1: counter_8_bit-behav File: C:/Users/20920822/temp/dsd-lab4/counter_8_bit.vhd Line: 10
-    Info (12023): Found entity 1: counter_8_bit File: C:/Users/20920822/temp/dsd-lab4/counter_8_bit.vhd Line: 4
+    Info (12022): Found design unit 1: counter_8_bit-behav File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 11
+    Info (12023): Found entity 1: counter_8_bit File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file augmented.vhd
-    Info (12022): Found design unit 1: counter_8_bit_augmented-behav File: C:/Users/20920822/temp/dsd-lab4/augmented.vhd Line: 9
-    Info (12023): Found entity 1: counter_8_bit_augmented File: C:/Users/20920822/temp/dsd-lab4/augmented.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file wk3_multiple_7segment_decoders.vhd
-    Info (12022): Found design unit 1: Wk3_Multiple_7segment_decoders-impl File: C:/Users/20920822/temp/dsd-lab4/Wk3_Multiple_7segment_decoders.vhd Line: 15
-    Info (12023): Found entity 1: Wk3_Multiple_7segment_decoders File: C:/Users/20920822/temp/dsd-lab4/Wk3_Multiple_7segment_decoders.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file wk3_7segment_decoder.vhd
-    Info (12022): Found design unit 1: Wk3_7segment_decoder-top_arch File: C:/Users/20920822/temp/dsd-lab4/Wk3_7segment_decoder.vhd Line: 10
-    Info (12023): Found entity 1: Wk3_7segment_decoder File: C:/Users/20920822/temp/dsd-lab4/Wk3_7segment_decoder.vhd Line: 4
-Info (12127): Elaborating entity "Lab4" for the top level hierarchy
+    Info (12022): Found design unit 1: counter_8_bit_augmented-behav File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/augmented.vhd Line: 9
+    Info (12023): Found entity 1: counter_8_bit_augmented File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/augmented.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file Wk3_Multiple_7segment_decoders.vhd
+    Info (12022): Found design unit 1: Wk3_Multiple_7segment_decoders-impl File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/Wk3_Multiple_7segment_decoders.vhd Line: 14
+    Info (12023): Found entity 1: Wk3_Multiple_7segment_decoders File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/Wk3_Multiple_7segment_decoders.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file Wk3_7segment_decoder.vhd
+    Info (12022): Found design unit 1: Wk3_7segment_decoder-top_arch File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/Wk3_7segment_decoder.vhd Line: 11
+    Info (12023): Found entity 1: Wk3_7segment_decoder File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/Wk3_7segment_decoder.vhd Line: 4
+Info (12127): Elaborating entity "counter_8_bit" for the top level hierarchy
+Warning (10873): Using initial value X (don't care) for net "q[7..2]" at counter_8_bit.vhd(18) File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 18
+Warning (10021): Ignored chip_pin synthesis attribute for port "q_out" because the synthesis attribute's pin assignment list contains 9 assignment(s), which does not match port width of 8 bit(s) File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 7
+Info (12128): Elaborating entity "t_flip_flop" for hierarchy "t_flip_flop:ff0" File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 37
+Warning (10541): VHDL Signal Declaration warning at t_flip_flop.vhd(7): used implicit default value for signal "Q_inv" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/t_flip_flop.vhd Line: 7
+Info (12128): Elaborating entity "Wk3_7segment_decoder" for hierarchy "Wk3_7segment_decoder:seg1" File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 55
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "q_out[2]" is stuck at GND File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 7
+    Warning (13410): Pin "q_out[3]" is stuck at GND File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 7
+    Warning (13410): Pin "q_out[4]" is stuck at GND File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 7
+    Warning (13410): Pin "q_out[5]" is stuck at GND File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 7
+    Warning (13410): Pin "q_out[6]" is stuck at GND File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 7
+    Warning (13410): Pin "q_out[7]" is stuck at GND File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 7
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 8
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 8
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 8
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 8
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 8
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 8
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 8
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: /home/timothy-tan/Code/current-units/digital-system-design/Labs/lab4/counter_8_bit.vhd Line: 8
 Info (286030): Timing-Driven Synthesis is running
-Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register counter[0] will power up to Low File: C:/Users/20920822/temp/dsd-lab4/Lab4.vhd Line: 27
-    Critical Warning (18010): Register counter[31] will power up to Low File: C:/Users/20920822/temp/dsd-lab4/Lab4.vhd Line: 27
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 60 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 57 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4828 megabytes
-    Info: Processing ended: Mon Sep 11 10:58:21 2023
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:17
+Info (21057): Implemented 30 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 22 output pins
+    Info (21061): Implemented 5 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 467 megabytes
+    Info: Processing ended: Mon Sep 18 13:57:11 2023
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:12
 
 

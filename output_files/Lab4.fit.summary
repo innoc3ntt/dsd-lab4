@@ -1,15 +1,15 @@
-Fitter Status : Successful - Mon Sep 11 10:58:30 2023
-Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Standard Edition
+Fitter Status : Successful - Mon Sep 18 13:57:16 2023
+Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : Lab4
-Top-level Entity Name : Lab4
+Top-level Entity Name : counter_8_bit
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 58 / 49,760 ( < 1 % )
-    Total combinational functions : 58 / 49,760 ( < 1 % )
-    Dedicated logic registers : 33 / 49,760 ( < 1 % )
-Total registers : 33
-Total pins : 3 / 360 ( < 1 % )
+Total logic elements : 6 / 49,760 ( < 1 % )
+    Total combinational functions : 6 / 49,760 ( < 1 % )
+    Dedicated logic registers : 2 / 49,760 ( < 1 % )
+Total registers : 2
+Total pins : 25 / 360 ( 7 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
