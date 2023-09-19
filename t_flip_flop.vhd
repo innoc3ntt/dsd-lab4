@@ -8,21 +8,23 @@ ENTITY t_flip_flop IS
 END t_flip_flop;
 
 ARCHITECTURE behav OF t_flip_flop IS
-	SIGNAL q_out : STD_LOGIC;
+	SIGNAL curr_q : STD_LOGIC;
 	SIGNAL next_q : STD_LOGIC;
 BEGIN
 
-	PROCESS (CLR, clk, T)
+	PROCESS (CLR, clk)
 	BEGIN
 		IF CLR = '0' THEN
-			q_out <= '0';
+			curr_q <= '0';
 
-		ELSIF rising_edge(clk) AND T = '1' THEN
-			q_out <= next_q;
+		ELSIF rising_edge(clk) THEN
+			curr_q <= next_q;
 
 		END IF;
 	END PROCESS;
-	next_q <= q_out WHEN T = '0' ELSE
-		NOT q_out;
-	Q <= q_out;
+	
+	next_q <= curr_q WHEN T = '0' ELSE
+		NOT curr_q;
+	
+	Q <= curr_q;
 END behav;
